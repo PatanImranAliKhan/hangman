@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <div class="main">
+        <span *ngIf="a1;else else1">{{a1}}</span>
+        <ng-template #else1>&#95;</ng-template>&nbsp;
+        <span *ngIf="a2;else else2">{{a2}}</span>
+        <ng-template #else2>&#95;</ng-template>&nbsp;
+        <span *ngIf="a3;else else3">{{a3}}</span>
+        <ng-template #else3>&#95;</ng-template>&nbsp;
+        <span *ngIf="a4;else else4">{{a4}}</span>
+        <ng-template #else4>&#95;</ng-template>
+    </div>
+    <div class="content" *ngFor="let char of characters">
+        <button mat-button (click)="clicked(char)">{{char}}</button>
+    </div>
+
+    <div>
+        <h4>{{gm}}</h4>
+        <span>No. of moves : {{count+i}}</span>
+        <h4 *ngIf="win">
+            You Won The Game
+        </h4>
+        <h4 *ngIf="lose">
+            Better Luck Next Time
+        </h4>
+    </div>
+</div>
+
